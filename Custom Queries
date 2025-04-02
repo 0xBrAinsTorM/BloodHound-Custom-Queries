@@ -2,7 +2,7 @@ Dangerous Rights of Groups to Computers except High Priv Groups
 MATCH p = (m:Group)-[:Owns|WriteDacl|GenericAll|WriteOwner|ExecuteDCOM|GenericWrite|AllowedToDelegate|ForceChangePassword]->(n:Computer) WHERE NOT m.objectid ENDS WITH "-512" AND NOT m.objectid ENDS WITH "-544" AND NOT m.objectid ENDS WITH "-519" AND NOT m.objectid ENDS WITH "-548" RETURN p
 
 Dangerous Rights of Groups to Users except High Priv Groups
-MATCH p = (m:Group)-[:Owns|WriteDacl|GenericAll|WriteOwner|ExecuteDCOM|GenericWrite|AllowedToDelegate|ForceChangePassword]->(n:Computer) WHERE NOT m.objectid ENDS WITH "-512" AND NOT m.objectid ENDS WITH "-544" AND NOT m.objectid ENDS WITH "-519" AND NOT m.objectid ENDS WITH "-548" RETURN p
+MATCH p = (m:Group)-[:Owns|WriteDacl|GenericAll|WriteOwner|ExecuteDCOM|GenericWrite|AllowedToDelegate|ForceChangePassword]->(n:User) WHERE NOT m.objectid ENDS WITH "-512" AND NOT m.objectid ENDS WITH "-544" AND NOT m.objectid ENDS WITH "-519" AND NOT m.objectid ENDS WITH "-548" RETURN p
 
 Dangerous Rights of Users to Computers except High Priv Groups
 MATCH p = (m:User)-[:Owns|WriteDacl|GenericAll|WriteOwner|ExecuteDCOM|GenericWrite|AllowedToDelegate|ForceChangePassword]->(n:Computer)
